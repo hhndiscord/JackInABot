@@ -1,0 +1,24 @@
+{
+  "name": "jack-in-a-bot",
+  "version": "1.0.0",
+  "description": "Discord Bot",
+  "main": "Bot.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/Bot.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandtcollins/JackInTheBot.git"
+  },
+  "author": "Brandt Collins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandtcollins/JackInTheBot/issues"
+  },
+  "homepage": "https://github.com/brandtcollins/JackInTheBot#readme",
+  "dependencies": {
+    "discord.js": "^13.8.0",
+    "dotenv": "^16.0.1"
+  }
+}
