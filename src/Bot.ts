@@ -2,6 +2,7 @@ import { AnyChannel, Client, Intents } from "discord.js";
 import ready from "./listeners/ready";
 import interactionCreate from "./listeners/interactionsCreate";
 import handleSpamDelete from "./commands/SpamDelete";
+import messageCreate from "./listeners/messageCreate";
 require("dotenv").config();
 
 const DEV_TOKEN = process.env.DEV_TOKEN;
@@ -18,13 +19,6 @@ const client = new Client({
 
 ready(client);
 interactionCreate(client);
-
-client.on("ready", () => {
-  modAdminChannel = client.channels.cache.get(MOD_ADMIN_CHAT);
-});
-
-client.on("messageCreate", async (message) => {
-  handleSpamDelete(modAdminChannel, message);
-});
+messageCreate(client);
 
 client.login(IS_PROD === "true" ? PROD_TOKEN : DEV_TOKEN);

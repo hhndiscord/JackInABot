@@ -1,8 +1,13 @@
 import { MessageEmbed } from "discord.js";
+require("dotenv").config();
+const ADMIN_ROLE: any = process.env.ADMIN_ROLE;
+const MOD_ROLE: any = process.env.MOD_ROLE;
 
 const handleSpamDelete = async (channel: any, message: any) => {
   const authorID = message.author.id;
   const member = message.guild.members.cache.get(authorID);
+  const isAdmin = message.member.roles.cache.has(ADMIN_ROLE);
+  const isMod = message.member.roles.cache.has(MOD_ROLE);
   const spamDeleteMessage = new MessageEmbed()
     // Set the title of the field
     .setTitle("Discord Invite Deleted")
@@ -32,10 +37,12 @@ const handleSpamDelete = async (channel: any, message: any) => {
   if (
     bannedWords.some((word) => message.content.toLowerCase().includes(word))
   ) {
-    member
-      .timeout(1 * 60 * 1000, "Sharing server invites is not permitted.")
-      .then(console.log)
-      .catch(console.error);
+    if (!isAdmin && !isMod) {
+      member
+        .timeout(1 * 60 * 1000, "Sharing server invites is not permitted.")
+        .catch(console.error);
+    }
+
     message
       .delete()
       .catch((e: any) => console.error("Could not delete message."))
