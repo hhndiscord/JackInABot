@@ -16,6 +16,9 @@
   },
   "author": "Brandt Collins",
   "license": "ISC",
+  "engines": {
+    "node": "17.8.0"
+  },
   "bugs": {
     "url": "https://github.com/brandtcollins/JackInTheBot/issues"
   },
