@@ -5,8 +5,7 @@
   "main": "Bot.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/Bot.ts",
-    "postinstall": "tsc"
+    "start": "ts-node src/Bot.ts"
   },
   "repository": {
     "type": "git",
