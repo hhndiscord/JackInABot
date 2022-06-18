@@ -42,12 +42,9 @@ export const WeekndMessage: any = new MessageEmbed()
     }
   );
 
-export const ShowSpoilers: any = new MessageEmbed()
-  .setTitle(`...but The Weeknd isn't horror?`)
+export const ShowSpoilersMessage: any = new MessageEmbed()
+  .setTitle(`Gain access to the spoiler channels`)
   .setColor(0xff0000)
-  .setThumbnail(
-    "https://yt3.ggpht.com/QiI-c4cFyRPD0qVwTQooC3dlgJqHA_t6CpEAv818om-mqL9bqNDL4L_qXQVXx_eY76D_7cLD=s176-c-k-c0x00ffffff-no-rj"
-  )
   .setDescription(
-    `Sure he is! Horror is a lot more dynamic than you may think. It's not limited to just one specific genre of music. Check out these music videos...`
+    `If you don’t mind potential spoilers to events, shows or scare zones and want access to the spoiler channels, click the button below.  Please help us keep the public channels spoiler free by using these channels and using the spoiler tags.`
   );
