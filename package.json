@@ -4,10 +4,10 @@
   "description": "Discord Bot",
   "main": "Bot.ts",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "node dist/Bot.js",
     "tsc": "tsc",
     "postinstall": "tsc",
-    "watch-node": "nodemon dist/index.js",
+    "watch-node": "nodemon dist/Bot.js",
     "watch-ts": "tsc -w",
     "deploy": "git add . && git commit -m Heroku && git push heroku master"
   },
