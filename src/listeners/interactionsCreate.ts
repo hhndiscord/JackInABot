@@ -14,16 +14,12 @@ const handleSlashCommand = async (
   interaction: BaseCommandInteraction
 ): Promise<void> => {
   const slashCommand = Commands.find((c) => c.name === interaction.commandName);
-  const isEphemeral = EphemeralCommands.find(
-    (c) => c.name === interaction.commandName
-  );
-  console.log(isEphemeral ? true : false);
   if (!slashCommand) {
     interaction.followUp({ content: "An error has occurred" });
     return;
   }
 
-  await interaction.deferReply({ ephemeral: isEphemeral ? true : false });
+  await interaction.deferReply();
 
   slashCommand.run(client, interaction);
 };
