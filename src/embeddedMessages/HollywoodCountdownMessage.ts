@@ -1,7 +1,7 @@
 import { MessageEmbed } from "discord.js";
 import moment from "moment";
 
-const hollywoodOpeningDay = new Date("Sep 2, 2022 22:30:00").getTime();
+const hollywoodOpeningDay = new Date("Sep 8, 2022 22:00:00").getTime();
 let now = moment().utc().valueOf();
 let distance = hollywoodOpeningDay - now;
 let days = Math.floor(distance / (1000 * 60 * 60 * 24));
