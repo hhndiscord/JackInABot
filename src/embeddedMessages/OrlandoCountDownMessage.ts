@@ -1,19 +1,14 @@
 import { MessageEmbed } from "discord.js";
 var moment = require("moment-timezone");
 
-const orlandoOpeningDay = moment.tz(
-  "Sep 2th 2022 6:30PM",
-  "MMM Do YYYY hA",
-  "America/Los_Angeles"
-);
-let date = "2022-09-02T18:30:00";
-let now = moment();
-var dur = moment.duration(moment(date).diff(moment()));
+const openingDay = new Date("Sep 2, 2022 22:30:00").getTime();
 
-let days = Math.floor(moment.duration(orlandoOpeningDay.diff(now)).asDays());
-let hours = dur.hours();
-let minutes = dur.minutes();
-let seconds = dur.seconds();
+let now = moment().utc().valueOf();
+let distance = openingDay - now;
+let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 export const orlandoCountdownMessage: any = new MessageEmbed()
   .setTitle(
