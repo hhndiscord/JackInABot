@@ -1,13 +1,22 @@
 import { MessageEmbed } from "discord.js";
-import moment from "moment";
+var moment = require("moment-timezone");
 
-const hollywoodOpeningDay = new Date("Sep 8, 2022 22:00:00").getTime();
-let now = moment().utc().valueOf();
-let distance = hollywoodOpeningDay - now;
-let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+const hollywoodOpeningDay = moment.tz(
+  "Sep 9th 2022 7PM",
+  "MMM Do YYYY hA",
+  "America/Los_Angeles"
+);
+
+let now = moment().tz("America/Los_Angeles");
+
+// get the difference between the moments
+const diff = hollywoodOpeningDay.diff(now);
+const diffDuration = moment.duration(diff);
+
+let days = Math.floor(moment.duration(hollywoodOpeningDay.diff(now)).asDays());
+let hours = diffDuration.hours();
+let minutes = diffDuration.minutes();
+let seconds = diffDuration.seconds();
 
 export const hollywoodCountdownMessage: any = new MessageEmbed()
   .setTitle(

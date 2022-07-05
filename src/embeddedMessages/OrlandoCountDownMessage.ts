@@ -1,13 +1,13 @@
 import { MessageEmbed } from "discord.js";
-import moment from "moment";
+var moment = require("moment-timezone");
 
-const orlandoOpeningDay = new Date("Sep 2, 2022 18:30:00").getTime();
-let now = moment().utc().valueOf();
-let distance = orlandoOpeningDay - now;
-let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+let date = "2022-09-02T18:30:00";
+var dur = moment.duration(moment(date).diff(moment()));
+
+let days = dur.days();
+let hours = dur.hours();
+let minutes = dur.minutes();
+let seconds = dur.seconds();
 
 export const orlandoCountdownMessage: any = new MessageEmbed()
   .setTitle(
@@ -15,5 +15,9 @@ export const orlandoCountdownMessage: any = new MessageEmbed()
   )
   .setColor(0xff0000)
   .setDescription(
-    `There are ${days} days ${hours} hours ${minutes} minutes and ${seconds} seconds until Halloween Horror Nights 31. Are you ready?`
+    `There are ${Math.round(days)} days ${Math.round(hours)} hours ${Math.round(
+      minutes
+    )} minutes and ${Math.round(
+      seconds
+    )} seconds until Halloween Horror Nights 31. Are you ready?`
   );
