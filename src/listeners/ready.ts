@@ -29,8 +29,6 @@ export default (client: Client): void => {
       orlandoGeneral.send({ embeds: [orlandoCountdownMessage] });
     });
 
-    hollywoodGeneral.send({ embeds: [hollywoodCountdownMessage] });
-    orlandoGeneral.send({ embeds: [orlandoCountdownMessage] });
     console.log(`${client.user.username} is online`);
   });
 };
