@@ -21,11 +21,11 @@ export default (client: Client): void => {
     hollywoodGeneral = client.channels.cache.get(HOLLYWOOD_GENERAL);
     orlandoGeneral = client.channels.cache.get(ORLANDO_GENERAL);
 
-    cron.schedule("0 22 */5 * *", () => {
+    cron.schedule("0 22 */3 * *", () => {
       hollywoodGeneral.send({ embeds: [hollywoodCountdownMessage] });
     });
 
-    cron.schedule("0 18 */5 * *", () => {
+    cron.schedule("0 18 */3 * *", () => {
       orlandoGeneral.send({ embeds: [orlandoCountdownMessage] });
     });
 
