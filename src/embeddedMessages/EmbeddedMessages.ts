@@ -39,6 +39,16 @@ export const WeekndMessage: any = new MessageEmbed()
       name: "Die For You",
       value: "[Watch on YT](https://www.youtube.com/watch?v=uPD0QOGTmMI)",
       inline: true,
+    },
+    {
+      name: "How Do I Make You Love Me ",
+      value: "[Watch on YT](https://www.youtube.com/watch?v=VLMo0rthnoo)",
+      inline: true,
+    },
+    {
+      name: "Call Out My Name",
+      value: "[Watch on YT](https://www.youtube.com/watch?v=M4ZoCHID9GI)",
+      inline: true,
     }
   );
 
