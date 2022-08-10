@@ -24,5 +24,5 @@ export const hollywoodCountdownMessage: any = new MessageEmbed()
   )
   .setColor(0xff0000)
   .setDescription(
-    `There are ${days} days ${hours} hours ${minutes} minutes and ${seconds} seconds until Halloween Horror Nights 31. Are you ready?`
+    `There are ${days} days left until Halloween Horror Nights 31. Are you ready?`
   );

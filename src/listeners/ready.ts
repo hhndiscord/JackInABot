@@ -28,6 +28,10 @@ export default (client: Client): void => {
     cron.schedule("0 18 */2 * *", () => {
       orlandoGeneral.send({ embeds: [orlandoCountdownMessage] });
     });
+
+    hollywoodGeneral.send({ embeds: [hollywoodCountdownMessage] });
+    orlandoGeneral.send({ embeds: [orlandoCountdownMessage] });
+
     console.log(`${client.user.username} is online`);
   });
 };
