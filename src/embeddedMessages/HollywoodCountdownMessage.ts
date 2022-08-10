@@ -20,7 +20,7 @@ let seconds = diffDuration.seconds();
 
 export const hollywoodCountdownMessage: any = new MessageEmbed()
   .setTitle(
-    `${days} days until Halloween Horror Nights 31 at Universal Studios Orlando`
+    `${days} days until Halloween Horror Nights 31 at Universal Studios Hollywood`
   )
   .setColor(0xff0000)
   .setDescription(
