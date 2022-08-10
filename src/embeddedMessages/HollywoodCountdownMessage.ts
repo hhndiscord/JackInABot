@@ -2,7 +2,7 @@ import { MessageEmbed } from "discord.js";
 var moment = require("moment-timezone");
 
 const hollywoodOpeningDay = moment.tz(
-  "Sep 9th 2022 7PM",
+  "Sep 8th 2022 7PM",
   "MMM Do YYYY hA",
   "America/Los_Angeles"
 );

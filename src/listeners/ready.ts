@@ -21,14 +21,13 @@ export default (client: Client): void => {
     hollywoodGeneral = client.channels.cache.get(HOLLYWOOD_GENERAL);
     orlandoGeneral = client.channels.cache.get(ORLANDO_GENERAL);
 
-    cron.schedule("0 22 */3 * *", () => {
+    cron.schedule("0 22 */2 * *", () => {
       hollywoodGeneral.send({ embeds: [hollywoodCountdownMessage] });
     });
 
-    cron.schedule("0 18 */3 * *", () => {
+    cron.schedule("0 18 */2 * *", () => {
       orlandoGeneral.send({ embeds: [orlandoCountdownMessage] });
     });
-
     console.log(`${client.user.username} is online`);
   });
 };
