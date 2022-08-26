@@ -25,7 +25,7 @@ export default (client: Client): void => {
       hollywoodGeneral.send({ embeds: [hollywoodCountdownMessage] });
     });
 
-    cron.schedule("0 18 */2 * *", () => {
+    cron.schedule("0 18 * * *", () => {
       orlandoGeneral.send({ embeds: [orlandoCountdownMessage] });
     });
     console.log(`${client.user.username} is online`);
