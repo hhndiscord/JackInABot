@@ -58,3 +58,10 @@ export const ShowSpoilersMessage: any = new MessageEmbed()
   .setDescription(
     `If you don’t mind potential spoilers to events, shows or scare zones and want access to the spoiler channels, click the button below.  Please help us keep the public channels spoiler free by using these channels and using the spoiler tags.`
   );
+
+export const EarlyEntryMessage: any = new MessageEmbed()
+  .setTitle(`How does Early Entry work?`)
+  .setColor(0xff0000)
+  .setDescription(
+    `Early Entry for Halloween Horror Nights Hollywood operates beginning at around 6PM, up to the event start time of 7PM. Early Entry can be accessed if you purchase an event ticket directly on the Universal Hollywood ticketing pages. This includes all ticket variants, (excl. RIP Experience). Houses that are confirmed to open around 6PM Pacific are that of The Weeknd: After Hours Nightmares, Killer Klowns From Outer Space, & Universal Monsters: Legend's Collide. Other House experiences may be additionally open prior too the 7PM opening.`
+  );
