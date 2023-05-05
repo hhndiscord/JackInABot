@@ -3,18 +3,29 @@
 ## Init setup
 Place a .env in the root dir with the following:
 
-DEV_TOKEN
-DEV_BOT_ID
+DEV_TOKEN 
+
+DEV_BOT_ID 
+
 PROD_TOKEN
+
 PROD_BOT_ID
+
 IS_PROD
 
+
 ADMIN_ROLE
+
 MOD_ROLE
 
 ORLANDO_GENERAL
+
 HOLLYWOOD_GENERAL
+
 GENERAL_CHAT
+
 MOD_ADMIN_CHAT
 
+
 SUPA_PUB_ANON
+
