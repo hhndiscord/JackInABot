@@ -1,7 +1,13 @@
 # JackInTheBot
 
+##Node Version:
+17+ (I use 17.8.0)
+
 ## Init setup
-Place a .env in the root dir with the following:
+
+Clone repo in desired directory. Run `npm i` in root. 
+
+Place a .env in the root dir with the following, will need most of this info from a sandbox server:
 
 DEV_TOKEN 
 
