@@ -7,7 +7,7 @@
 
 Clone repo in desired directory. Run `npm i` in root. 
 
-Place a .env in the root dir with the following, will need most of this info from a sandbox server:
+Place a .env in the root dir with the following, you will need most of this info from a sandbox server:
 
 DEV_TOKEN 
 
