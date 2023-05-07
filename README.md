@@ -35,3 +35,5 @@ MOD_ADMIN_CHAT=
 
 SUPA_PUB_ANON=
 
+## Starting the bot
+Start the bot with `npm run start`
