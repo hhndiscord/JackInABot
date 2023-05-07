@@ -1,6 +1,6 @@
 # JackInTheBot
 
-##Node Version:
+## Node Version:
 17+ (I use 17.8.0)
 
 ## Init setup
