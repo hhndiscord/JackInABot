@@ -1,5 +1,8 @@
 import { bold, codeBlock } from "@discordjs/formatters";
+require("dotenv").config();
 
+const MOD_ROLE: any = process.env.MOD_ROLE;
+const ADMIN_ROLE: any = process.env.ADMIN_ROLE;
 //prettier-ignore
 let numArray = [`:rotating_light::regional_indicator_g::regional_indicator_o::rotating_light:`,`:one:`,`:two:`,`:three:`,`:four:`,`:five:`,];
 let stopCountDownTimer: boolean = false;
@@ -49,7 +52,7 @@ export const checkTime = async (interaction: any, channel: any) => {
     movieStartTime &&
       interaction
         .followUp({
-          content: bold(`> Current elapsed time: ${formatTime(timeDiff)}`),
+          content: bold(`**CURRENT ELAPSED TIME: ${formatTime(timeDiff)}**`),
         })
         .then(count--)
         .catch((error: any) => console.log(error));
@@ -64,6 +67,7 @@ export const startTime = async (interaction: any, channel: any) => {
   interval = setInterval(() => {
     sendCountDownMessage(interaction, channel);
   }, 1000);
+  return;
 };
 
 export const stopTime = async (interaction: any, channel: any) => {
@@ -73,9 +77,9 @@ export const stopTime = async (interaction: any, channel: any) => {
   if (movieStartTime) {
     let currentTime = new Date();
     let timeDiff = (currentTime.getTime() - movieStartTime.getTime()) / 1000;
-    let stopTimerMsg = `Movie timer stopped! Total time elapsed: ${formatTime(
+    let stopTimerMsg = `**Movie timer stopped! Total time elapsed: ${formatTime(
       timeDiff
-    )}`;
+    )}**`;
     interaction
       .followUp({ content: `${stopTimerMsg}` })
       .then()

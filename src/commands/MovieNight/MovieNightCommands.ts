@@ -1,8 +1,7 @@
 import { BaseCommandInteraction, Client, MessageEmbed } from "discord.js";
 import { Command } from "../../Command";
 import { checkTime, startTime, stopTime } from "./MovieNightHelpers";
-
-const message = "Testing";
+require("dotenv").config();
 
 export const StartTime: Command = {
   name: "start",
@@ -11,7 +10,7 @@ export const StartTime: Command = {
   run: async (client: Client, interaction: BaseCommandInteraction) => {
     await startTime(
       interaction,
-      client.channels.cache.get("855831448522981399")
+      client.channels.cache.get(interaction.channelId)
     );
   },
 };
@@ -23,7 +22,7 @@ export const StopTime: Command = {
   run: async (client: Client, interaction: BaseCommandInteraction) => {
     await stopTime(
       interaction,
-      client.channels.cache.get("855831448522981399")
+      client.channels.cache.get(interaction.channelId)
     );
   },
 };
@@ -35,7 +34,7 @@ export const CheckTime: Command = {
   run: async (client: Client, interaction: BaseCommandInteraction) => {
     await checkTime(
       interaction,
-      client.channels.cache.get("855831448522981399")
+      client.channels.cache.get(interaction.channelId)
     );
   },
 };
