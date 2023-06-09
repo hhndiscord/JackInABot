@@ -66,7 +66,7 @@ export const checkTime = async (interaction: any, channel: any) => {
 export const resetTimer = async (interaction: any, channel: any) => {
   if (!movieStartTime) {
     let date = new Date();
-    date.setHours(0, 0, 0, 0);
+    date.setUTCHours(0, 0, 0, 0);
     movieStartTime = date;
     interaction.followUp(
       {
