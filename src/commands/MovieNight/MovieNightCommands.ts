@@ -1,6 +1,11 @@
 import { BaseCommandInteraction, Client, MessageEmbed } from "discord.js";
 import { Command } from "../../Command";
-import { checkTime, startTime, stopTime } from "./MovieNightHelpers";
+import {
+  checkTime,
+  resetTimer,
+  startTime,
+  stopTime,
+} from "./MovieNightHelpers";
 require("dotenv").config();
 
 export const StartTime: Command = {
@@ -9,6 +14,18 @@ export const StartTime: Command = {
   type: "CHAT_INPUT",
   run: async (client: Client, interaction: BaseCommandInteraction) => {
     await startTime(
+      interaction,
+      client.channels.cache.get(interaction.channelId)
+    );
+  },
+};
+
+export const ResetTime: Command = {
+  name: "reset",
+  description: "Reset the time keeper for movie night",
+  type: "CHAT_INPUT",
+  run: async (client: Client, interaction: BaseCommandInteraction) => {
+    await resetTimer(
       interaction,
       client.channels.cache.get(interaction.channelId)
     );

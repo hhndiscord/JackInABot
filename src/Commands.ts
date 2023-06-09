@@ -6,6 +6,7 @@ import { Countdown } from "./commands/Countdown";
 import { Roles } from "./commands/Roles";
 import {
   CheckTime,
+  ResetTime,
   StartTime,
   StopTime,
 } from "./commands/MovieNight/MovieNightCommands";
@@ -17,5 +18,6 @@ export const Commands: Command[] = [
   StartTime,
   StopTime,
   CheckTime,
+  ResetTime,
 ];
 export const EphemeralCommands: Command[] = [];

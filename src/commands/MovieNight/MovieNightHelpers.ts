@@ -56,6 +56,25 @@ export const checkTime = async (interaction: any, channel: any) => {
         })
         .then(count--)
         .catch((error: any) => console.log(error));
+  } else {
+    interaction.followUp({
+      content: `There are no timers currently set.`,
+    });
+  }
+};
+
+export const resetTimer = async (interaction: any, channel: any) => {
+  if (!movieStartTime) {
+    let date = new Date();
+    date.setHours(20);
+    date.setMinutes(0);
+    movieStartTime = date;
+    interaction.followUp(
+      {
+        content: `Timer reset.`,
+      },
+      { ephemeral: true }
+    );
   }
 };
 
